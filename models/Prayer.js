@@ -6,6 +6,7 @@ const PrayerSchema = new mongoose.Schema({
     fname:{type:String,required:true},
     lname:{type:String,required:true},
     count:{type:String,required:true,default:1},
+    userId:{type:String,required:true,default:1}
 },{timestamps:true})
 
 module.exports = mongoose.model("prayer",PrayerSchema);

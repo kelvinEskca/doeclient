@@ -36,7 +36,8 @@ router.delete("/:id", verifyTokenAuthorization, async (req,res)=>{
 //get Testimony
 router.get("/:id", async (req,res)=>{
     try{
-        const testimony = await Testimony.findById(req.params.id);
+        const testimony = await Testimony.find({userId:req.params.id});
+        console.log(testimony);
         res.status(200).json(testimony);
     }
     catch(err){

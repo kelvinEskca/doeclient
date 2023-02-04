@@ -34,7 +34,7 @@ router.delete("/:id", verifyTokenAuthorization, async (req,res)=>{
 //get Prayer
 router.get("/:id", async (req,res)=>{
     try{
-        const prayer = await Prayer.findById(req.params.id);
+        const prayer = await Prayer.find({userId:req.params.id});
         res.status(200).json(prayer);
     }
     catch(err){
